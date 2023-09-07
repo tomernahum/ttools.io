@@ -1,7 +1,8 @@
 <script lang="ts">
+	import DarkModeToggle from './DarkModeToggle.svelte';
 	import './app.postcss';
 
-	import {toggleDarkMode} from "./functions"
+	import {toggleDarkMode} from "./theme"
 </script>
 
 <svelte:head>
@@ -22,5 +23,11 @@
 	</script>
 </svelte:head>
 
-<button on:click={toggleDarkMode}> Toggle Dark Mode</button>
-<slot />
+<div class="max-w-2xl mx-auto flex">
+	<DarkModeToggle className="ml-auto  mb-1"/>
+</div>
+
+<main class="max-w-2xl mx-auto">
+	<slot />
+</main>
+
